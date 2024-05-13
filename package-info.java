@@ -1,25 +1,23 @@
-package com.labQ4;
-class Mmain{
+package com.labQ6;
+class Main{
 	public static void main(String[] args) {
-		char[] chars = {'a','A','B','C','d'};
-		for(int i=0; i<chars.length; i++) {
-			System.out.print(chars[i]+" ");
-		}
+		int[] array= {3, 7, 1, 9, 4};
+		int indexToDelete=7;
+		deletedElement(array,indexToDelete);
 	}
-static void bubbleSort(int array[]) {
-    int size = array.length;
-    for (int i = 0; i < size - 1; i++)
-      for (int j = 0; j < size - i - 1; j++)
 
-        
-        if (array[j] > array[j + 1]) {
+	private static int[] deletedElement(int[] array, int indexToDelete) {
+		int[] newArray = new int[array.length - 1]; 
+		if(indexToDelete>0 && indexToDelete <array.length) {
+			for (int i = 0, j = 0; i < array.length; i++) { 
+				if (i != indexToDelete) { 
+					newArray[j++] = array[i]; 
+				}
+			}
+		}
+		else{
+			new IllegalStateException("Invalid index " + array); 
+		return newArray;
+	}
 
-          // swapping occurs if elements
-          // are not in the intended order
-          int temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
-        }
-  }
 }
-  
